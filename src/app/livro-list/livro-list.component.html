@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Livro list</h2>
+  </div>
+
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Autor</th>
+          <th>Data da Leitura</th>
+          <th>Status da Leitura</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let livro of livros | async">
+          <td>{{livro.nome}}</td>
+          <td>{{livro.autor}}</td>
+          <td>{{livro.dataLeitura}}</td>
+          <td>{{livro.status}}</td>
+          <td>{{livro.descricao}}</td>
+          <td><button (click)="deleteLivro(livro.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updateLivro(livro.id)" class="btn btn-info" style="...">Update</button>
+          <button (click)="livroDetails(livro.id)" class="btn btn-info" style="...">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
